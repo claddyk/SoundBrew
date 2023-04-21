@@ -28,6 +28,7 @@ export const signin = async(req,res)=>{
         console.log("userFound")
         if(bcrypt.compare(password,userdoc.password)){
           console.log("login successfully")
+          
             
         }
         else console.log("Invalid Password");
