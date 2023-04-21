@@ -18,11 +18,12 @@ SoundBrew offers the following features:
 Technologies Used
 
 SoundBrew is built using the following technologies:
+    UI-UX Figma 
 
     Front-end: HTML, CSS, JavaScript, ReactJS
 
     Back-end: Node.js, Express.js, MongoDB
     
-Contributing
+Contributing here:
 
 We welcome contributions from the open-source community to make SoundBrew better. If you want to contribute, please fork the repository and submit a pull request.
