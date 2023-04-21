@@ -1,0 +1,103 @@
+Server Side(Node and ExpressJS)
+
+    const express = require('express');
+    const bodyParser = require('body-parser');
+    const mongoose = require('mongoose');
+    const Podcast = require('./models/podcast');
+
+    const app = express();
+    const port = 5000;
+
+    connect to MongoDB database
+    mongoose.connect('mongodb://localhost/myapp', { useNewUrlParser: true });
+
+    middleware for parsing request bodies
+    app.use(bodyParser.json());
+
+    route for adding a podcast to favorites
+    app.post('/favorites', (req, res) => {
+    const podcast = new Podcast(req.body);
+    podcast.save()
+        .then(() => {
+        res.status(201).send('Podcast added to favorites');
+        })
+        .catch((err) => {
+        res.status(400).send(err);
+        });
+    });
+
+    route for getting the list of favorite podcasts
+    app.get('/favorites', (req, res) => {
+    Podcast.find()
+        .then((podcasts) => {
+        res.send(podcasts);
+        })
+        .catch((err) => {
+        res.status(500).send(err);
+        });
+    });
+
+    start the server
+    app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+    });
+
+
+Frontennd
+    import React, { useState, useEffect } from 'react';
+    import axios from 'axios';
+
+    function App() {
+    const [podcasts, setPodcasts] = useState([]);
+    const [newPodcast, setNewPodcast] = useState('');
+
+    useEffect(() => {
+        axios.get('/oritefavs')
+        .then((response) => {
+            setPodcasts(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, []);
+
+    const handleAddPodcast = () => {
+        axios.post('/favorites', { title: newPodcast })
+        .then(() => {
+            setNewPodcast('');
+            axios.get('/favorites')
+            .then((response) => {
+                setPodcasts(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
+
+    const handlePlayPodcast = (title) => {
+        console.log(`Now playing ${title}`);
+    };
+
+    return (
+        <div>
+        <h1>My Favorite Podcasts</h1>
+        <ul>
+            {podcasts.map((podcast) => (
+            <li key={podcast._id}>
+                {podcast.title}
+                <button onClick={() => handlePlayPodcast(podcast.title)}>Play</button>
+            </li>
+            ))}
+        </ul>
+        <div>
+            <input type="text" value={newPodcast} onChange={(e) => setNewPodcast(e.target.value)} />
+            <button onClick={handleAddPodcast}>Add to Favorites</button>
+        </div>
+        </div
+    )
+
+
