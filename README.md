@@ -5,15 +5,14 @@ Features
 
 SoundBrew offers the following features:
 
-    Music and Podcast Streaming: You can stream your favorite music or podcast content directly from our website. We support various audio formats and offer a seamless listening experience.
+Music and Podcast Streaming: You can stream your favorite music or podcast content directly from our website. We support various audio formats and offer a seamless listening experience.
 
-    Search: You can search for any artist, album, or podcast by using our search bar. We also provide suggestions to help you discover new content.
+Search: You can search for any artist, album, or podcast by using our search bar. We also provide suggestions to help you discover new content.
+Playlists: You can create your own playlists and add your favorite tracks or episodes to them. You can also share your playlists with others or explore the playlists created by other users.
 
-    Playlists: You can create your own playlists and add your favorite tracks or episodes to them. You can also share your playlists with others or explore the playlists created by other users.
+Favorite tracks: You can mark your favorite tracks or episodes for quick access in the future.
 
-    Favorite tracks: You can mark your favorite tracks or episodes for quick access in the future.
-
-    User Profile: You can create your own user profile and customize it with your personal information and profile picture. You can also view your listening history and your favorite tracks or episodes.
+User Profile: You can create your own user profile and customize it with your personal information and profile picture. You can also view your listening history and your favorite tracks or episodes.
 
 Technologies Used
 
