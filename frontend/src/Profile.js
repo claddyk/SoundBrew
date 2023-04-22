@@ -4,8 +4,6 @@ const Profile = () => {
 
   return (
     <div>
-       <h1>Name : Shubehndu</h1>
-
     </div>
   )
 }
