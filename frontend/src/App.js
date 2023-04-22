@@ -1,11 +1,21 @@
-
-
-import Part from './Part';
+import "./App.css";
+import ParticleBackground from "./ParticleBackground";
 
 function App() {
   return (
-    <div className="App">
-      <Part></Part>
+    <div>
+      <ParticleBackground />
+      <CenterTitle />
+    </div>
+  );
+}
+
+function CenterTitle() {
+  return (
+    <div id="text_div center_all">
+      <div className="center_all">
+        <h1 className="custom-subTitle">Particle JS Integration</h1>
+      </div>
     </div>
   );
 }
